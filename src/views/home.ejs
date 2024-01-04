@@ -1,0 +1,46 @@
+<style>
+    body{
+        /* background-image: url("https://images.unsplash.com/photo-1476231790875-016a80c274f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGpvYnxlbnwwfHwwfHx8MA%3D%3D"); */
+        background-color: rgb(3, 3, 68);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .btn{
+        margin-left: 10px;
+    }
+
+    h1{
+        color: palevioletred;
+    }
+</style>
+
+
+<% if (messages.success && messages.success.length > 0) { %>
+    <div class="error" style="color: red;">
+        <!-- <%= messages.success[0] %>
+        <script>
+            setTimeout(() => {
+                document.querySelector('.flash-message').style.display = 'none';
+            }, 5000); // Hide after 5 seconds (adjust as needed)
+        </script> -->
+        <script>
+            setTimeout(() => {
+                alert('<%= messages.success[0] %>');
+            }, 0); // Display immediately
+        </script>
+    </div>
+<% } %>
+<div class="d-flex home" style="margin-top: 200px;">
+   
+    <div class="text-start align-middle">
+        <h1>A NodeJS Authetication App</h1>
+        <a class="btn btn-primary btn-lg" href="/register" role="button" style="height: fit-content;">Click me to Register</a>
+        <%if(user){%>
+            <%}else{%>
+        <a class="btn btn-primary btn-lg" href="/login" role="button" style="height: fit-content;">Click me to Login</a>
+        <%}%>
+    </div>
+    <!-- <div style="margin-top: -200px;" >
+        <img src="https://easily-deploy.onrender.com/images/banner.png">
+    </div> -->
+</div>

@@ -1,0 +1,48 @@
+<h1 class="mt-5 mb-4">Register</h1>
+<% if (messages.error && messages.error.length > 0) { %>
+    <div class="error">
+        <script>
+            setTimeout(() => {
+                alert('<%= messages.error[0] %>');
+            }, 0); // Display immediately
+        </script>
+    </div>
+<% } %>
+
+<% if (messages.success && messages.success.length > 0) { %>
+    <div class="error" style="color: red;">
+        <script>
+            setTimeout(() => {
+                alert('<%= messages.success[0] %>');
+            }, 0); // Display immediately
+        </script>
+    </div>
+<% } %>
+
+<form action="/register" method="post">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <div class="mb-3">
+        <label for="confirmPassword" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+
+
+<br>
+<br>
+<br>
+<div>
+    <p>Already registered? <a href="/login" class="btn btn-outline-primary">Login</a> </p>
+</div>
